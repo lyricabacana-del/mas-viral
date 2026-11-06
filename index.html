@@ -458,7 +458,7 @@ header {
   position: relative; overflow: hidden; min-height: 200px; isolation: isolate;
   display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
   border-radius: var(--r); border: 1px solid var(--border);
-  background: #0b0b0e; /* Fallback por si la imagen tarda */
+  background: #0b0b0e;
 }
 .achieve::before { content: ""; position: absolute; inset: 0; z-index: 0; }
 .achieve:nth-child(1)::before { background: radial-gradient(circle at 85% 10%, #ff123050, transparent 60%), #0b0b0e; }
@@ -648,7 +648,7 @@ header {
 .growth-note { margin-top: 14px; font-size: 11px; color: #777; text-align: center; }
 
 /* =========================================
-   14. FOOTER Y WHATSAPP
+   14. FOOTER
    ========================================= */
 footer { padding: 28px 0 calc(28px + var(--safe-b)); }
 .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
@@ -663,14 +663,6 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
 
 .footer-links { display: flex; gap: 20px; font-size: 13px; color: #aaa; }
 .footer-copy { font-size: 11px; color: #777; }
-
-.wa {
-  position: fixed; right: 16px; bottom: calc(16px + var(--safe-b)); z-index: 90; width: 56px; height: 56px;
-  display: grid; place-items: center; border-radius: 50%; background: #25D366; color: #fff;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.4), 0 0 0 6px rgba(37, 211, 102, 0.15); transition: transform .2s;
-}
-.wa:active { transform: scale(.92); }
-.wa .ico { width: 28px; height: 28px; }
 
 /* =========================================
    15. ANIMACIONES Y RESPONSIVE
@@ -768,7 +760,6 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 7h7l-5.5 4.5 2 8L12 17l-6.5 4.5 2-8L2 9h7z"/></symbol>
   <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.1"/></symbol>
   <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v12a4 4 0 1 1-4-4M14 3c1 4 3 5 7 5"/></symbol>
-  <!-- Logo oficial y limpio de WhatsApp -->
   <symbol id="i-whatsapp" viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
   </symbol>
@@ -830,7 +821,6 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
         <div class="iphone-screen">
           <div class="iphone-brand">+ VIRAL</div>
 
-          <!-- Gráfico optimizado: curva suave, sin cruces, flecha verde -->
           <div class="iphone-chart">
             <div class="iphone-chart-header">
               <div>
@@ -1018,7 +1008,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </section>
 
-<!-- LOGROS (Imágenes aseguradas con fallback) -->
+<!-- LOGROS -->
 <section id="logros">
   <div class="container">
     <div class="section-head reveal">
@@ -1145,7 +1135,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </section>
 
-<!-- CRECIMIENTO 0k → 30k (Animado, limpio y sin cruces) -->
+<!-- CRECIMIENTO 0k → 30k -->
 <section id="crecimiento">
   <div class="container">
     <div class="growth card reveal" id="growthCard">
@@ -1213,11 +1203,6 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
     <span class="footer-copy">© 2026 + VIRAL · TODOS LOS DERECHOS RESERVADOS</span>
   </div>
 </footer>
-
-<!-- Botón flotante de WhatsApp (Color oficial y logo limpio) -->
-<a href="https://wa.me/5492920247733" class="wa" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener">
-  <svg class="ico"><use href="#i-whatsapp"/></svg>
-</a>
 
 <script>
 // 1. Activar clases JS para animaciones de entrada
@@ -1402,7 +1387,6 @@ $("contactForm").addEventListener("submit", e => {
     }
     d += " L" + x.toFixed(1) + " " + y.toFixed(1);
     
-    // El área se cierra perfectamente hacia abajo, evitando cualquier cruce
     line.setAttribute("d", d);
     area.setAttribute("d", d + " L" + x.toFixed(1) + " 140 L" + X[0] + " 140 Z");
     dot.setAttribute("cx", x.toFixed(1));
@@ -1461,4 +1445,4 @@ $("contactForm").addEventListener("submit", e => {
 })();
 </script>
 </body>
-     </html>
+   </html>

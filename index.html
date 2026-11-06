@@ -6,10 +6,9 @@
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="+ Viral: marketing, contenido, diseño web y crecimiento digital para negocios y creadores.">
-<title>+ Viral | Marketing que hace crecer tu marca</title>
+<title>+ Viral | Marketing que hace crecer su marca</title>
 <link rel="canonical" href="https://mas-viral.vercel.app/">
 
-<!-- Favicon mejorado: logo +Viral con estilo outline -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Cpath d='M20 32h24M32 20v24' stroke='%23ff1230' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M42 18l6 6M42 24l6-6' stroke='%23ff1230' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
@@ -18,8 +17,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="+ Viral">
 <meta property="og:locale" content="es_AR">
-<meta property="og:title" content="+ Viral | Hacemos que tu marca sea más viral">
-<meta property="og:description" content="Marketing, contenido, diseño web y redes sociales para negocios y creadores. Pedí tu propuesta gratis.">
+<meta property="og:title" content="+ Viral | Hacemos que su marca sea más viral">
+<meta property="og:description" content="Marketing, contenido, diseño web y redes sociales para negocios y creadores. Solicite su propuesta gratis.">
 <meta property="og:url" content="https://mas-viral.vercel.app/">
 <meta property="og:image" content="https://mas-viral.vercel.app/portada.jpg">
 <meta property="og:image:secure_url" content="https://mas-viral.vercel.app/portada.jpg">
@@ -30,8 +29,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="+ Viral | Hacemos que tu marca sea más viral">
-<meta name="twitter:description" content="Marketing, contenido, diseño web y redes sociales. Pedí tu propuesta gratis.">
+<meta name="twitter:title" content="+ Viral | Hacemos que su marca sea más viral">
+<meta name="twitter:description" content="Marketing, contenido, diseño web y redes sociales. Solicite su propuesta gratis.">
 <meta name="twitter:image" content="https://mas-viral.vercel.app/portada.jpg">
 <meta name="twitter:image:alt" content="+ Viral: agencia de marketing y creadores">
 
@@ -64,6 +63,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -73,8 +74,12 @@ body {
   font-size: 15px;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
 }
+
+img, svg { max-width: 100%; display: block; }
+h1, h2, h3, p { overflow-wrap: break-word; }
 
 a { text-decoration: none; color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; -webkit-appearance: none; appearance: none; border-radius: 0; }
@@ -100,14 +105,13 @@ section { padding: 72px 0; content-visibility: auto; contain-intrinsic-size: aut
 
 .icon-circle {
   width: 52px; height: 52px; display: grid; place-items: center;
-  border: 1px solid #3a3a3a; border-radius: 50%; background: #0d0d10;
+  border: 1px solid #3a3a3a; border-radius: 50%; background: #0d0d10; flex-shrink: 0;
 }
 
 .section-head { margin-bottom: 32px; max-width: 640px; }
-.section-head h2 { font-size: clamp(30px, 7vw, 46px); line-height: 1.05; letter-spacing: -.04em; margin: 10px 0 12px; }
+.section-head h2 { font-size: clamp(28px, 7vw, 46px); line-height: 1.05; letter-spacing: -.04em; margin: 10px 0 12px; }
 .section-head p { color: var(--gray); font-size: 15px; }
 
-/* BOTONES con efecto espectral en hover */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 50px; padding: 0 24px; border-radius: 999px;
@@ -141,7 +145,7 @@ header {
   backdrop-filter: blur(10px);
 }
 .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.logo { font-size: 28px; font-weight: 900; letter-spacing: -.05em; color: var(--red); text-shadow: 0 0 22px #ff123044; }
+.logo { font-size: 28px; font-weight: 900; letter-spacing: -.05em; color: var(--red); text-shadow: 0 0 22px #ff123044; white-space: nowrap; }
 .nav-links { display: flex; align-items: center; gap: 26px; font-size: 13px; color: #bdbdbd; }
 .nav-links a:not(.btn):hover { color: var(--red); }
 .nav-links .btn { min-height: 42px; padding: 0 18px; color: #fff; background: var(--red); border-color: var(--red); }
@@ -171,28 +175,63 @@ header {
   background: radial-gradient(circle, #ff2a4028, transparent 65%); pointer-events: none;
 }
 .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; position: relative; }
+.hero-grid > * { min-width: 0; }
 .hero-label {
   display: inline-flex; align-items: center; gap: 8px; border: 1px solid #333; border-radius: 999px;
   padding: 8px 14px; font-size: 11px; letter-spacing: .14em; color: #d0d0d0; margin-bottom: 22px; background: #0b0b0e;
+  max-width: 100%;
 }
-.hero-label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px var(--red); }
-.hero h1 { font-size: clamp(48px, 13vw, 84px); line-height: .95; letter-spacing: -.06em; font-weight: 900; }
+.hero-label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px var(--red); flex-shrink: 0; }
+
+.hero h1 {
+  font-size: clamp(34px, 8vw, 56px);
+  line-height: .95;
+  letter-spacing: -.02em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
 .hero h1 span { color: var(--red); }
 .hero-description { color: #b0b0b0; font-size: 16px; max-width: 460px; margin: 22px 0 28px; }
 .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-trust { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
-.trust-item {
-  display: flex; align-items: center; gap: 8px; font-size: 12px; color: #c4c4c4;
-  padding: 8px 13px; border: 1px solid var(--border); border-radius: 999px; background: #0a0a0e;
+
+.hero-trust {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-top: 28px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 2px 6px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
 }
-.trust-item .ico { width: 16px; height: 16px; color: var(--red); }
+.hero-trust::-webkit-scrollbar { display: none; }
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  font-size: 11px;
+  color: #c4c4c4;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #0a0a0e;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+.trust-item .ico { width: 14px; height: 14px; color: var(--red); }
 
 /* =========================================
-   5. iPHONE REALISTA CON OUTLINE BLANCO
+   5. iPHONE CON GRÁFICO DE CRECIMIENTO LIMPIO
    ========================================= */
-.hero-visual { min-height: 420px; position: relative; display: grid; place-items: center; }
+.hero-visual { min-height: 440px; position: relative; display: grid; place-items: center; }
 
-/* Órbita con halo rojo + azul espectral */
 .hero-orbit {
   position: absolute; width: 320px; height: 320px; border-radius: 50%;
   border: 1px solid #ff2a4066;
@@ -202,25 +241,32 @@ header {
   content: ""; position: absolute; inset: 34px; border: 1px dashed #ffffff1a; border-radius: 50%;
 }
 
-/* iPhone con borde blanco outline brillante */
 .iphone {
   position: relative; z-index: 2;
   width: 200px; height: 400px;
   border-radius: 38px;
-  /* Borde blanco con glow multicapa */
-  border: 2.5px solid #ffffff;
-  box-shadow:
-    0 0 0 1px #ffffff33,
-    0 0 25px #ffffff22,
-    0 0 60px #ffffff11,
-    0 40px 80px #000000cc,
-    inset 0 0 0 1px #ffffff0a;
   background: #050508;
   padding: 10px;
   transform: rotate(-8deg);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+}
+.iphone::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 39.5px;
+  background: linear-gradient(135deg, rgba(255, 18, 48, 0.5), rgba(255, 255, 255, 0.25) 40%, rgba(255, 255, 255, 0.25) 60%, rgba(0, 229, 255, 0.5));
+  z-index: -1;
+}
+.iphone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 38px;
+  background: #050508;
+  z-index: -1;
 }
 
-/* Notch superior del iPhone */
 .iphone-notch {
   position: absolute;
   top: 10px; left: 50%; transform: translateX(-50%);
@@ -239,10 +285,9 @@ header {
   background: #1a1a1a;
 }
 
-/* Botones laterales del iPhone */
 .iphone-btn {
   position: absolute;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 2px;
   z-index: 1;
 }
@@ -251,7 +296,6 @@ header {
 .iphone-btn-left-3 { left: -3px; top: 185px; width: 3px; height: 48px; }
 .iphone-btn-right { right: -3px; top: 130px; width: 3px; height: 60px; }
 
-/* Pantalla del iPhone */
 .iphone-screen {
   width: 100%; height: 100%;
   border-radius: 28px;
@@ -266,10 +310,9 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 14px 20px;
+  padding: 36px 12px 16px;
 }
 
-/* Barra inferior estilo iPhone (home indicator) */
 .iphone-screen::after {
   content: "";
   position: absolute;
@@ -283,25 +326,54 @@ header {
   opacity: 0.6;
 }
 
-.iphone-brand { font-size: 28px; font-weight: 900; letter-spacing: -.05em; color: var(--red); text-shadow: 0 0 20px #ff123066; }
-.iphone-plus { font-size: 110px; line-height: 1; color: var(--red); font-weight: 200; text-shadow: 0 0 40px #ff2a4088; }
-.iphone-bottom { font-size: 9px; letter-spacing: .2em; color: #ddd; text-align: center; }
+.iphone-brand { font-size: 16px; font-weight: 900; letter-spacing: -.02em; color: var(--red); text-shadow: 0 0 20px #ff123066; margin-bottom: 8px; }
+.iphone-bottom { font-size: 8px; letter-spacing: .2em; color: #ddd; text-align: center; margin-top: auto; padding-bottom: 6px; }
 
-/* Tarjetas flotantes con borde espectral superior */
+.iphone-chart {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 10px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.iphone-chart-header { display: flex; justify-content: space-between; align-items: flex-end; }
+.iphone-chart-title {
+  font-size: 8px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.iphone-chart-stat { font-size: 16px; color: #fff; font-weight: 800; line-height: 1; }
+.iphone-chart-stat span { font-size: 9px; color: #4ade80; font-weight: 600; display: block; margin-top: 2px; }
+.chart-svg { width: 100%; height: 90px; overflow: visible; }
+.chart-line { stroke-dasharray: 300; stroke-dashoffset: 300; animation: drawLine 2.5s ease-out forwards; }
+.chart-area { opacity: 0; animation: fadeInArea 2.5s ease-out 1s forwards; }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes fadeInArea { to { opacity: 1; } }
+
 .float-card {
   position: absolute; z-index: 3;
+  width: 176px; height: 64px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 14px;
   border: 1px solid #333;
   border-top: 1px solid #00e5ff44;
   border-radius: 16px;
   background: #0c0c10f2;
-  padding: 14px 16px;
   backdrop-filter: blur(8px);
 }
 .float-card .ico { color: var(--red); width: 20px; height: 20px; }
-.float-card strong { display: block; font-size: 20px; margin: 4px 0 2px; letter-spacing: -.03em; }
-.float-card span { font-size: 11px; color: #b0b0b0; line-height: 1.4; display: block; }
-.float-one { right: -10px; top: 40px; width: 150px; }
-.float-two { left: -10px; bottom: 30px; display: flex; gap: 10px; align-items: center; }
+.float-card span {
+  font-size: 11px; font-weight: 700; letter-spacing: .05em; line-height: 1.35;
+  color: #b0b0b0; text-transform: uppercase; white-space: nowrap;
+}
+.float-one { right: 0; top: 28px; }
+.float-two { left: 0; bottom: 28px; }
 
 /* =========================================
    6. CINTA ANIMADA (MARQUEE)
@@ -313,12 +385,13 @@ header {
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* =========================================
-   7. SERVICIOS (CON GLASSMORPHISM OSCURO)
+   7. SERVICIOS
    ========================================= */
 .services-layout { display: grid; grid-template-columns: 260px 1fr; gap: 34px; align-items: center; }
-.services-intro h2 { font-size: clamp(32px, 7vw, 42px); line-height: 1.04; letter-spacing: -.04em; margin: 12px 0; }
+.services-layout > * { min-width: 0; }
+.services-intro h2 { font-size: clamp(30px, 7vw, 42px); line-height: 1.04; letter-spacing: -.04em; margin: 12px 0; }
 .services-intro p { color: var(--gray); }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
 .service {
   position: relative; overflow: hidden; padding: 22px 20px;
@@ -345,7 +418,7 @@ header {
 /* =========================================
    8. PLANES
    ========================================= */
-.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
 .plan { position: relative; padding: 26px 22px; display: flex; flex-direction: column; gap: 16px; }
 .plan.featured {
   border-color: var(--red);
@@ -368,7 +441,7 @@ header {
 /* =========================================
    9. PROCESO
    ========================================= */
-.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .process { padding: 22px 20px; }
 .process-number { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
 .process .icon-circle { margin: 16px 0 14px; }
@@ -376,14 +449,16 @@ header {
 .process p { font-size: 13px; color: var(--gray); }
 
 /* =========================================
-   10. LOGROS (CON DEGRADADO ESPECTRAL)
+   10. LOGROS
    ========================================= */
 .achieve-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 14px; }
-.achieve-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.achieve-layout > * { min-width: 0; }
+.achieve-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .achieve {
   position: relative; overflow: hidden; min-height: 200px; isolation: isolate;
   display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
   border-radius: var(--r); border: 1px solid var(--border);
+  background: #0b0b0e; /* Fallback por si la imagen tarda */
 }
 .achieve::before { content: ""; position: absolute; inset: 0; z-index: 0; }
 .achieve:nth-child(1)::before { background: radial-gradient(circle at 85% 10%, #ff123050, transparent 60%), #0b0b0e; }
@@ -424,7 +499,8 @@ header {
 .audience p { font-size: 14px; color: var(--gray); max-width: 260px; }
 
 .faq-layout { display: grid; grid-template-columns: 260px 1fr; gap: 34px; }
-.faq-title h2 { font-size: clamp(32px, 7vw, 40px); letter-spacing: -.04em; line-height: 1.05; margin: 12px 0; }
+.faq-layout > * { min-width: 0; }
+.faq-title h2 { font-size: clamp(30px, 7vw, 40px); letter-spacing: -.04em; line-height: 1.05; margin: 12px 0; }
 .faq-title p { color: var(--gray); }
 .faq-list { display: grid; gap: 10px; align-content: start; }
 .faq-list details { border: 1px solid var(--border); border-radius: 16px; background: var(--panel); padding: 0 18px; transition: border-color .2s; }
@@ -447,16 +523,11 @@ header {
    12. CONTACTO Y FORMULARIO
    ========================================= */
 .contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 36px; }
-.contact-title { font-size: clamp(40px, 10vw, 60px); letter-spacing: -.05em; line-height: 1; margin: 14px 0; }
+.contact-layout > * { min-width: 0; }
+.contact-title { font-size: clamp(36px, 10vw, 60px); letter-spacing: -.05em; line-height: 1; margin: 14px 0; }
 .contact-description { color: var(--gray); max-width: 420px; }
-.contact-socials { display: flex; gap: 10px; margin-top: 24px; }
-.contact-socials a {
-  width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid var(--border);
-  border-radius: 50%; background: #0b0b0e; transition: .2s;
-}
-.contact-socials a:active { border-color: var(--red); color: var(--red); }
 
-.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; padding: 22px; }
+.contact-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-content: start; padding: 22px; }
 .field { position: relative; min-width: 0; }
 .field.full { grid-column: 1 / -1; }
 
@@ -473,7 +544,6 @@ header {
   box-shadow: 0 0 0 3px #ff2a4022, 0 0 12px #00e5ff15;
 }
 
-/* SELECTOR PERSONALIZADO */
 .dd { position: relative; }
 .dd.open { z-index: 60; }
 .dd-btn {
@@ -483,7 +553,7 @@ header {
   transition: border-color .2s, box-shadow .2s, color .2s;
 }
 .dd-btn.filled { color: #fff; }
-.dd-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dd-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .dd-btn svg {
   width: 18px; height: 18px; fill: none; stroke: var(--red); stroke-width: 2.2;
   stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;
@@ -524,23 +594,86 @@ header {
 .form-note { grid-column: 1 / -1; color: #777; font-size: 12px; text-align: center; }
 
 /* =========================================
-   13. FOOTER Y WHATSAPP
+   13. CRECIMIENTO 0k → 30k (OPTIMIZADO)
+   ========================================= */
+.growth {
+  padding: 26px 22px;
+  border-color: #3a1018;
+  background: linear-gradient(155deg, #16080b, #08080c 65%);
+  overflow: hidden;
+}
+.growth-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 18px;
+}
+.growth-head > * { min-width: 0; }
+.growth-head h2 { font-size: clamp(24px, 6vw, 36px); line-height: 1.05; letter-spacing: -.04em; margin-top: 8px; }
+.growth-counter { text-align: right; }
+.growth-counter strong {
+  display: block; min-width: 3.4ch;
+  font-size: clamp(44px, 12vw, 72px); font-weight: 900; line-height: 1; letter-spacing: -.04em;
+  color: transparent; -webkit-text-stroke: 1.5px var(--red);
+  font-variant-numeric: tabular-nums;
+}
+.growth-counter span { font-size: 11px; letter-spacing: .14em; color: var(--gray); text-transform: uppercase; }
+
+.growth-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.g-grid { stroke: rgba(255,255,255,.12); stroke-width: 1; }
+.g-txt { fill: #8a8a8a; font-size: 9px; font-family: inherit; }
+.g-line { fill: none; stroke: var(--red); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(255, 18, 48, 0.6)); }
+.g-area { fill: rgba(255,18,48,0.08); stroke: rgba(255,255,255,0.15); stroke-width: 1; stroke-dasharray: 3 3; }
+.g-pt { fill: #000; stroke: #fff; stroke-width: 1.5; opacity: 0; transition: opacity .3s; }
+.g-pt.on { opacity: 1; }
+.g-dot { fill: #000; stroke: var(--red); stroke-width: 2.5; filter: drop-shadow(0 0 8px rgba(255, 18, 48, 0.8)); }
+
+.weeks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.week {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px 6px; border: 1px solid var(--border); border-radius: 14px; background: #0a0a0e;
+  transition: border-color .3s, background .3s;
+}
+.week-name { font-size: 9px; letter-spacing: .1em; color: var(--gray); font-weight: 700; white-space: nowrap; }
+.week-val { font-size: 16px; font-weight: 800; letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1px #fff; font-variant-numeric: tabular-nums; line-height: 1; }
+.week-bar {
+  position: relative; display: block; width: 100%; max-width: 34px; height: 54px;
+  border: 1px solid #3a3a3a; border-radius: 8px; overflow: hidden;
+}
+.week-bar b {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 0;
+  border-top: 1.5px solid var(--red); background: rgba(255,18,48,.15);
+}
+.week.active { border-color: var(--red); background: #14080b; }
+.week.active .week-val { -webkit-text-stroke-color: var(--red); }
+.week.done .week-val { -webkit-text-stroke-color: #fff; }
+.growth-note { margin-top: 14px; font-size: 11px; color: #777; text-align: center; }
+
+/* =========================================
+   14. FOOTER Y WHATSAPP
    ========================================= */
 footer { padding: 28px 0 calc(28px + var(--safe-b)); }
 .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+.footer-logo {
+  display: inline-flex; align-items: baseline; gap: .3em;
+  font-size: 22px; font-weight: 900; letter-spacing: -.03em; line-height: 1;
+  text-transform: uppercase; white-space: nowrap; text-decoration: none;
+}
+.footer-logo .logo-white { color: var(--white); }
+.footer-logo .logo-red { color: var(--red); text-shadow: 0 0 22px #ff123044; }
+
 .footer-links { display: flex; gap: 20px; font-size: 13px; color: #aaa; }
 .footer-copy { font-size: 11px; color: #777; }
 
 .wa {
   position: fixed; right: 16px; bottom: calc(16px + var(--safe-b)); z-index: 90; width: 56px; height: 56px;
-  display: grid; place-items: center; border-radius: 50%; background: var(--red); color: #fff;
-  box-shadow: 0 8px 28px #000, 0 0 0 6px #ff2a4022; transition: transform .2s;
+  display: grid; place-items: center; border-radius: 50%; background: #25D366; color: #fff;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4), 0 0 0 6px rgba(37, 211, 102, 0.15); transition: transform .2s;
 }
 .wa:active { transform: scale(.92); }
-.wa .ico { width: 26px; height: 26px; }
+.wa .ico { width: 28px; height: 28px; }
 
 /* =========================================
-   14. ANIMACIONES Y RESPONSIVE
+   15. ANIMACIONES Y RESPONSIVE
    ========================================= */
 .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .js .reveal.visible { opacity: 1; transform: none; }
@@ -548,9 +681,9 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
 @media(max-width: 900px) {
   .services-layout, .faq-layout, .contact-layout { grid-template-columns: 1fr; }
   .services-intro, .faq-title { max-width: 520px; }
-  .process-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .achieve-layout { grid-template-columns: 1fr; }
-  .audience-grid { grid-template-columns: 1fr 1fr; }
+  .audience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plans-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
   .plan.featured { order: -1; }
 }
@@ -567,46 +700,58 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   .nav-links a:not(.btn) { padding: 18px 4px; border-bottom: 1px solid #1c1c1c; font-weight: 600; color: #fff; }
   .nav-links .btn { margin-top: 20px; min-height: 54px; font-size: 15px; }
   .hero { padding: 36px 0 48px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .hero-label { font-size: 10px; letter-spacing: .1em; padding: 8px 12px; }
   .hero-buttons .btn { flex: 1 1 100%; }
-  .hero-visual { min-height: 380px; }
-  .hero-orbit { width: 280px; height: 280px; }
-  .iphone { width: 180px; height: 360px; }
-  .float-one { right: -4px; top: 20px; width: 140px; }
-  .float-two { left: -4px; bottom: 10px; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .process-grid { grid-template-columns: 1fr; }
-  .process { display: grid; grid-template-columns: 52px 1fr; column-gap: 16px; align-items: start; }
+  .hero-visual { min-height: 400px; }
+  .hero-orbit { width: 270px; height: 270px; }
+  .iphone { width: 176px; height: 352px; }
+
+  .float-card { width: 150px; height: 58px; padding: 0 12px; gap: 8px; }
+  .float-card .ico { width: 18px; height: 18px; }
+  .float-card span { font-size: 9.5px; letter-spacing: .03em; }
+  .float-one { right: 0; top: 18px; }
+  .float-two { left: 0; bottom: 18px; }
+
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .process-grid { grid-template-columns: minmax(0, 1fr); }
+  .process { display: grid; grid-template-columns: 52px minmax(0, 1fr); column-gap: 16px; align-items: start; }
   .process-number { grid-column: 2; grid-row: 1; }
   .process .icon-circle { grid-column: 1; grid-row: 1 / 4; margin: 0; }
   .process h3 { grid-column: 2; margin: 6px 0 4px; }
   .process p { grid-column: 2; }
-  .achieve-grid { grid-template-columns: 1fr 1fr; }
+  .achieve-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .achieve { min-height: 190px; padding: 16px; }
-  .audience-grid { grid-template-columns: 1fr; }
-  .contact-form { grid-template-columns: 1fr; padding: 18px; }
-  .footer-grid { flex-direction: column; text-align: center; }
+  .audience-grid { grid-template-columns: minmax(0, 1fr); }
+  .contact-form { grid-template-columns: minmax(0, 1fr); padding: 18px; }
+  .growth { padding: 20px 16px; }
+  .growth-counter { text-align: left; }
+  .footer-grid { flex-direction: column; text-align: center; justify-content: center; }
+  .footer-links { justify-content: center; }
+  .footer-logo { font-size: clamp(18px, 6vw, 22px); }
 }
 
 @media(max-width: 400px) {
   .container { width: min(1140px, 100% - 32px); }
-  .services-grid, .achieve-grid { grid-template-columns: 1fr; }
-  .float-one { display: none; }
+  .services-grid, .achieve-grid { grid-template-columns: minmax(0, 1fr); }
+  .float-card { width: 146px; }
+  .week-val { font-size: 14px; }
+  .week-name { font-size: 8px; letter-spacing: .06em; }
 }
 
 @media(prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; }
+  .chart-line { stroke-dashoffset: 0; }
+  .chart-area { opacity: 1; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================================
-     15. ICONOS SVG (Sprite)
-     ========================================= -->
+<!-- ICONOS SVG (Sprite) -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
@@ -623,16 +768,16 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 7h7l-5.5 4.5 2 8L12 17l-6.5 4.5 2-8L2 9h7z"/></symbol>
   <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.1"/></symbol>
   <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v12a4 4 0 1 1-4-4M14 3c1 4 3 5 7 5"/></symbol>
-  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5a8.5 8.5 0 1 1 15.5-4.5z"/><path d="M9 8c0 4 3 7 7 7l1-2-3-1-1 1-3-3 1-1-1-2z"/></symbol>
-  <!-- Fuego outline rojo (coherente con el estilo outline del iPhone) -->
+  <!-- Logo oficial y limpio de WhatsApp -->
+  <symbol id="i-whatsapp" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+  </symbol>
   <symbol id="i-fire" viewBox="0 0 24 24">
     <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
 </svg>
 
-<!-- =========================================
-     16. HEADER
-     ========================================= -->
+<!-- HEADER -->
 <header>
   <div class="container nav">
     <a href="#inicio" class="logo" aria-label="+ Viral">+ Viral</a>
@@ -643,7 +788,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
       <a href="#proceso">Proceso</a>
       <a href="#logros">Qué logramos</a>
       <a href="#faq">FAQ</a>
-      <a href="#contacto" class="btn">Pedir propuesta <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#contacto" class="btn">Solicitar propuesta <svg class="ico"><use href="#i-arrow"/></svg></a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
       <span class="bars"><i></i><i></i><i></i></span>
@@ -653,30 +798,29 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
 
 <main>
 
-<!-- =========================================
-     17. HERO CON iPHONE REALISTA
-     ========================================= -->
+<!-- HERO -->
 <section class="hero" id="inicio" style="content-visibility:visible">
   <div class="container hero-grid">
     <div class="reveal">
       <div class="hero-label">AGENCIA DE MARKETING · CREADORES</div>
-      <h1>Hacemos que tu marca sea <span>+ Viral.</span></h1>
-      <p class="hero-description">Contenido, redes y publicidad para negocios y creadores. Contanos tu idea y te mandamos una propuesta sin costo.</p>
+      <h1>HACEMOS QUE SU MARCA SEA <span>+ VIRAL.</span></h1>
+      <p class="hero-description">Contenido, redes y publicidad para negocios y creadores. Cuéntenos su idea y le enviaremos una propuesta sin costo.</p>
       <div class="hero-buttons">
-        <a href="#contacto" class="btn btn-red">Pedir propuesta gratis <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="#contacto" class="btn btn-red">Solicitar propuesta gratis <svg class="ico"><use href="#i-arrow"/></svg></a>
         <a href="#servicios" class="btn">Descubrir más</a>
       </div>
-      <div class="hero-trust">
+      <div class="hero-trust" aria-label="Ventajas">
         <div class="trust-item"><svg class="ico"><use href="#i-message"/></svg> Respuesta en 24 hs</div>
         <div class="trust-item"><svg class="ico"><use href="#i-star"/></svg> Planes flexibles</div>
         <div class="trust-item"><svg class="ico"><use href="#i-target"/></svg> Objetivos medibles</div>
+        <div class="trust-item"><svg class="ico"><use href="#i-rocket"/></svg> Estrategia a medida</div>
+        <div class="trust-item"><svg class="ico"><use href="#i-video"/></svg> Contenido creativo</div>
       </div>
     </div>
 
     <div class="hero-visual reveal" aria-hidden="true">
       <div class="hero-orbit"></div>
-      
-      <!-- iPhone realista con outline blanco -->
+
       <div class="iphone">
         <div class="iphone-notch"></div>
         <div class="iphone-btn iphone-btn-left-1"></div>
@@ -684,20 +828,49 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
         <div class="iphone-btn iphone-btn-left-3"></div>
         <div class="iphone-btn iphone-btn-right"></div>
         <div class="iphone-screen">
-          <div class="iphone-brand">+ Viral</div>
-          <div class="iphone-plus">+</div>
+          <div class="iphone-brand">+ VIRAL</div>
+
+          <!-- Gráfico optimizado: curva suave, sin cruces, flecha verde -->
+          <div class="iphone-chart">
+            <div class="iphone-chart-header">
+              <div>
+                <div class="iphone-chart-title">Seguidores</div>
+                <div class="iphone-chart-stat">0k → 30k <span>▲ +340%</span></div>
+              </div>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 200 100">
+              <line x1="20" y1="80" x2="180" y2="80" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <line x1="20" y1="50" x2="180" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="20" y1="20" x2="180" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+              <text x="12" y="83" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="end">0k</text>
+              <text x="12" y="23" fill="rgba(255,255,255,0.4)" font-size="8" text-anchor="end">30k</text>
+
+              <path class="chart-area" d="M20 80 C 60 80, 80 50, 130 30 S 170 15, 170 15 V 80 H 20 Z" fill="rgba(255,18,48,0.1)"/>
+              <path class="chart-line" d="M20 80 C 60 80, 80 50, 130 30 S 170 15, 170 15" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              
+              <circle cx="170" cy="15" r="3" fill="#fff" filter="drop-shadow(0 0 4px #fff)"/>
+              
+              <g transform="translate(155, 5)">
+                <path d="M8 18 L8 4 M8 4 L3 9 M8 4 L13 9" stroke="#4ade80" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+
+              <text x="20" y="95" fill="rgba(255,255,255,0.4)" font-size="7" text-anchor="middle">S1</text>
+              <text x="70" y="95" fill="rgba(255,255,255,0.4)" font-size="7" text-anchor="middle">S2</text>
+              <text x="120" y="95" fill="rgba(255,255,255,0.4)" font-size="7" text-anchor="middle">S3</text>
+              <text x="170" y="95" fill="rgba(255,255,255,0.4)" font-size="7" text-anchor="middle">S4</text>
+            </svg>
+          </div>
+
           <div class="iphone-bottom">CREAMOS · CONECTAMOS</div>
         </div>
       </div>
-      
-      <!-- Tarjeta flotante superior derecha -->
+
       <div class="float-card float-one">
         <svg class="ico"><use href="#i-chart"/></svg>
-        <strong>+ VIRAL</strong>
-        <span>Más visibilidad para tu marca</span>
+        <span>MÁS VISIBILIDAD<br>PARA SU MARCA</span>
       </div>
-      
-      <!-- Tarjeta flotante inferior izquierda con FUEGO OUTLINE -->
+
       <div class="float-card float-two">
         <svg class="ico"><use href="#i-fire"/></svg>
         <span>IDEAS QUE<br>GENERAN IMPACTO</span>
@@ -706,9 +879,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </section>
 
-<!-- =========================================
-     18. CINTA ANIMADA
-     ========================================= -->
+<!-- CINTA ANIMADA -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <div><b>+ VIRAL</b> × MARKETING × CONTENIDO × CREATIVIDAD × CRECIMIENTO ×</div>
@@ -718,15 +889,13 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </div>
 
-<!-- =========================================
-     19. SERVICIOS (CON IMÁGENES DE FONDO)
-     ========================================= -->
+<!-- SERVICIOS -->
 <section id="servicios">
   <div class="container services-layout">
     <div class="services-intro reveal">
       <span class="tag">// Lo que hacemos</span>
       <h2>Nuestros servicios<span class="red">.</span></h2>
-      <p>Soluciones creativas para construir, posicionar y hacer crecer tu presencia digital.</p>
+      <p>Soluciones creativas para construir, posicionar y hacer crecer su presencia digital.</p>
     </div>
     <div class="services-grid">
       <article class="service card reveal">
@@ -734,7 +903,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
         <div class="service-content">
           <div class="icon-circle"><svg class="ico"><use href="#i-megaphone"/></svg></div>
           <h3>Marketing digital</h3>
-          <p>Estrategias para posicionar y hacer crecer tu marca.</p>
+          <p>Estrategias para posicionar y hacer crecer su marca.</p>
         </div>
       </article>
       <article class="service card reveal">
@@ -750,7 +919,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
         <div class="service-content">
           <div class="icon-circle"><svg class="ico"><use href="#i-web"/></svg></div>
           <h3>Diseño web</h3>
-          <p>Sitios modernos y profesionales para tu negocio.</p>
+          <p>Sitios modernos y profesionales para su negocio.</p>
         </div>
       </article>
       <article class="service card reveal">
@@ -766,7 +935,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
         <div class="service-content">
           <div class="icon-circle"><svg class="ico"><use href="#i-star"/></svg></div>
           <h3>Creadores e influencers</h3>
-          <p>Conectamos tu marca con nuevas audiencias.</p>
+          <p>Conectamos su marca con nuevas audiencias.</p>
         </div>
       </article>
       <article class="service card reveal">
@@ -781,20 +950,18 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </section>
 
-<!-- =========================================
-     20. PLANES
-     ========================================= -->
+<!-- PLANES -->
 <section id="planes">
   <div class="container">
     <div class="section-head reveal">
       <span class="tag">// Planes</span>
-      <h2>Elegí tu plan<span class="red">.</span></h2>
-      <p>Precios de referencia. Cada propuesta se puede adaptar a tu proyecto.</p>
+      <h2>Elija su plan<span class="red">.</span></h2>
+      <p>Precios de referencia. Cada propuesta se puede adaptar a su proyecto.</p>
     </div>
     <div class="plans-grid">
       <article class="plan card reveal">
         <div class="plan-top"><div class="icon-circle"><svg class="ico"><use href="#i-rocket"/></svg></div><h3>Arranque</h3></div>
-        <div class="plan-price">USD 99 <small>/ mes</small></div>
+        <div class="plan-price">USD $99 <small>/ mes</small></div>
         <ul>
           <li><svg class="ico"><use href="#i-check"/></svg>12 publicaciones al mes</li>
           <li><svg class="ico"><use href="#i-check"/></svg>Diseño de piezas</li>
@@ -807,7 +974,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
       <article class="plan card featured reveal">
         <span class="plan-badge">MÁS ELEGIDO</span>
         <div class="plan-top"><div class="icon-circle"><svg class="ico"><use href="#i-chart"/></svg></div><h3>Crecimiento</h3></div>
-        <div class="plan-price">USD 249 <small>/ mes</small></div>
+        <div class="plan-price">USD $249 <small>/ mes</small></div>
         <ul>
           <li><svg class="ico"><use href="#i-check"/></svg>20 publicaciones + 8 reels</li>
           <li><svg class="ico"><use href="#i-check"/></svg>Gestión de comunidad</li>
@@ -834,9 +1001,7 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </section>
 
-<!-- =========================================
-     21. PROCESO
-     ========================================= -->
+<!-- PROCESO -->
 <section id="proceso">
   <div class="container">
     <div class="section-head reveal">
@@ -845,49 +1010,47 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
       <p>Un sistema sencillo, organizado y transparente.</p>
     </div>
     <div class="process-grid">
-      <article class="process card reveal"><span class="process-number">01 / CONSULTA</span><div class="icon-circle"><svg class="ico"><use href="#i-message"/></svg></div><h3>Nos conocemos</h3><p>Nos contás tu proyecto, tus objetivos y qué necesitás.</p></article>
-      <article class="process card reveal"><span class="process-number">02 / PROPUESTA</span><div class="icon-circle"><svg class="ico"><use href="#i-file"/></svg></div><h3>Diseñamos el plan</h3><p>Preparamos una propuesta adaptada a tu negocio.</p></article>
+      <article class="process card reveal"><span class="process-number">01 / CONSULTA</span><div class="icon-circle"><svg class="ico"><use href="#i-message"/></svg></div><h3>Nos conocemos</h3><p>Cuéntenos su proyecto, sus objetivos y qué necesita.</p></article>
+      <article class="process card reveal"><span class="process-number">02 / PROPUESTA</span><div class="icon-circle"><svg class="ico"><use href="#i-file"/></svg></div><h3>Diseñamos el plan</h3><p>Preparamos una propuesta adaptada a su negocio.</p></article>
       <article class="process card reveal"><span class="process-number">03 / EJECUCIÓN</span><div class="icon-circle"><svg class="ico"><use href="#i-rocket"/></svg></div><h3>Lo hacemos realidad</h3><p>Producimos contenido y desarrollamos las acciones.</p></article>
       <article class="process card reveal"><span class="process-number">04 / MEDICIÓN</span><div class="icon-circle"><svg class="ico"><use href="#i-chart"/></svg></div><h3>Optimizamos</h3><p>Evaluamos resultados y buscamos nuevas oportunidades.</p></article>
     </div>
   </div>
 </section>
 
-<!-- =========================================
-     22. LOGROS
-     ========================================= -->
+<!-- LOGROS (Imágenes aseguradas con fallback) -->
 <section id="logros">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">// Lo que podés lograr</span>
+      <span class="tag">// Lo que puede lograr</span>
       <h2>Más visibilidad, más oportunidades<span class="red">.</span></h2>
-      <p>Herramientas y estrategias para llevar tu proyecto a otro nivel.</p>
+      <p>Herramientas y estrategias para llevar su proyecto a otro nivel.</p>
     </div>
     <div class="achieve-layout">
       <div class="achieve-grid">
         <article class="achieve reveal">
-          <img class="ph" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=70&auto=format&fit=crop" alt="Equipo trabajando en una estrategia" loading="lazy" decoding="async" width="600" height="400" onerror="this.remove()">
+          <img class="ph" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=70&auto=format&fit=crop" alt="Equipo trabajando en una estrategia" loading="lazy" decoding="async" width="600" height="400" onerror="this.style.display='none'">
           <svg class="ico"><use href="#i-eye"/></svg>
           <h3>Más alcance</h3>
-          <p>Tu marca frente a nuevas audiencias.</p>
+          <p>Su marca frente a nuevas audiencias.</p>
         </article>
         <article class="achieve reveal">
-          <img class="ph" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=70&auto=format&fit=crop" alt="Comunidad y trabajo en equipo" loading="lazy" decoding="async" width="600" height="400" onerror="this.remove()">
+          <img class="ph" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=70&auto=format&fit=crop" alt="Comunidad y trabajo en equipo" loading="lazy" decoding="async" width="600" height="400" onerror="this.style.display='none'">
           <svg class="ico"><use href="#i-users"/></svg>
           <h3>Más comunidad</h3>
           <p>Seguidores reales y comprometidos.</p>
         </article>
         <article class="achieve reveal">
-          <img class="ph" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=70&auto=format&fit=crop" alt="Análisis y crecimiento digital" loading="lazy" decoding="async" width="600" height="400" onerror="this.remove()">
+          <img class="ph" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=70&auto=format&fit=crop" alt="Análisis y crecimiento digital" loading="lazy" decoding="async" width="600" height="400" onerror="this.style.display='none'">
           <svg class="ico"><use href="#i-chart"/></svg>
           <h3>Más oportunidades</h3>
           <p>Más consultas y potenciales clientes.</p>
         </article>
         <article class="achieve reveal">
-          <img class="ph" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=70&auto=format&fit=crop" alt="Diseño e identidad visual" loading="lazy" decoding="async" width="600" height="400" onerror="this.remove()">
+          <img class="ph" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=70&auto=format&fit=crop" alt="Diseño e identidad visual" loading="lazy" decoding="async" width="600" height="400" onerror="this.style.display='none'">
           <svg class="ico"><use href="#i-star"/></svg>
           <h3>Más posicionamiento</h3>
-          <p>Una identidad que destaque en tu rubro.</p>
+          <p>Una identidad que destaque en su rubro.</p>
         </article>
       </div>
       <div class="numbers card reveal">
@@ -903,61 +1066,55 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </section>
 
-<!-- =========================================
-     23. AUDIENCIA
-     ========================================= -->
+<!-- AUDIENCIA -->
 <section id="audiencia">
   <div class="container">
     <div class="section-head reveal">
       <span class="tag">// Para quién</span>
-      <h2>Trabajamos con vos<span class="red">.</span></h2>
+      <h2>Trabajamos con usted<span class="red">.</span></h2>
       <p>Nos adaptamos a distintos proyectos, industrias y objetivos.</p>
     </div>
     <div class="audience-grid">
-      <article class="audience card reveal"><div class="icon-circle"><svg class="ico"><use href="#i-web"/></svg></div><h3>Negocios y marcas</h3><p>Más presencia, comunicación y oportunidades para tu empresa.</p></article>
+      <article class="audience card reveal"><div class="icon-circle"><svg class="ico"><use href="#i-web"/></svg></div><h3>Negocios y marcas</h3><p>Más presencia, comunicación y oportunidades para su empresa.</p></article>
       <article class="audience card reveal"><div class="icon-circle"><svg class="ico"><use href="#i-rocket"/></svg></div><h3>Emprendedores</h3><p>Una identidad profesional para comenzar a crecer.</p></article>
       <article class="audience card reveal"><div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div><h3>Creadores y artistas</h3><p>Marca personal, contenido y nuevas colaboraciones.</p></article>
     </div>
   </div>
 </section>
 
-<!-- =========================================
-     24. FAQ
-     ========================================= -->
+<!-- FAQ -->
 <section id="faq">
   <div class="container faq-layout">
     <div class="faq-title reveal">
       <span class="tag">// Dudas</span>
       <h2>Preguntas frecuentes<span class="red">.</span></h2>
-      <p>Resolvemos tus dudas para que puedas empezar con tranquilidad.</p>
+      <p>Resolvemos sus dudas para que pueda empezar con tranquilidad.</p>
     </div>
     <div class="faq-list reveal">
       <details><summary>¿Cuánto tardan en responder?</summary><p>Buscamos responder las consultas dentro de las primeras 24 horas hábiles.</p></details>
       <details><summary>¿Hay contrato de permanencia?</summary><p>Las condiciones de contratación se detallan en cada propuesta antes de comenzar.</p></details>
       <details><summary>¿Cómo se paga?</summary><p>Los medios de pago y las condiciones se coordinan al aprobar el presupuesto.</p></details>
-      <details><summary>¿Puedo contratar un solo servicio?</summary><p>Sí. Podés solicitar diseño web, contenido, publicidad o cualquier servicio por separado.</p></details>
+      <details><summary>¿Puedo contratar un solo servicio?</summary><p>Sí. Puede solicitar diseño web, contenido, publicidad o cualquier servicio por separado.</p></details>
       <details><summary>¿Trabajan con cualquier rubro?</summary><p>Evaluamos cada proyecto para ofrecer una estrategia adecuada a sus necesidades.</p></details>
     </div>
   </div>
 </section>
 
-<!-- =========================================
-     25. CONTACTO
-     ========================================= -->
+<!-- CONTACTO -->
 <section id="contacto">
   <div class="container contact-layout">
     <div class="reveal">
       <span class="tag">// Hablemos</span>
-      <h2 class="contact-title">Tu próxima idea puede ser <span class="red">viral.</span></h2>
-      <p class="contact-description">Contanos qué necesitás. Analizamos tu proyecto y preparamos una propuesta para ayudarte a crecer.</p>
+      <h2 class="contact-title">SU PRÓXIMA IDEA PUEDE SER <span class="red">VIRAL.</span></h2>
+      <p class="contact-description">Cuéntenos qué necesita. Analizamos su proyecto y preparamos una propuesta para ayudarle a crecer.</p>
     </div>
 
     <form class="contact-form card reveal" id="contactForm" autocomplete="on">
-      <div class="field"><input id="nombre" name="name" placeholder="Tu nombre" autocomplete="name" required></div>
-      <div class="field"><input id="dato" name="contact" placeholder="Tu WhatsApp o correo" autocomplete="off" required></div>
+      <div class="field"><input id="nombre" name="name" placeholder="Su nombre" autocomplete="name" required></div>
+      <div class="field"><input id="dato" name="contact" placeholder="Su WhatsApp o correo" autocomplete="off" required></div>
       <div class="field sel full">
         <select id="servicio">
-          <option value="">¿Qué necesitás?</option>
+          <option value="">¿Qué necesita?</option>
           <option>Marketing digital</option>
           <option>Creación de contenido</option>
           <option>Diseño web</option>
@@ -974,28 +1131,80 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
       <div class="field sel">
         <select id="presupuesto">
           <option value="">Presupuesto (opcional)</option>
-          <option>Menos de USD 100</option>
-          <option>USD 100 - 300</option>
-          <option>USD 300 - 1000</option>
-          <option>Más de USD 1000</option>
+          <option>Menos de USD $100</option>
+          <option>USD $100 - $300</option>
+          <option>USD $300 - $1000</option>
+          <option>Más de USD $1000</option>
         </select>
       </div>
-      <div class="field"><input id="empresa" placeholder="Tu negocio (opcional)" autocomplete="organization"></div>
-      <div class="field full"><textarea id="mensaje" placeholder="Contanos tu idea o proyecto..." required></textarea></div>
+      <div class="field"><input id="empresa" placeholder="Su negocio (opcional)" autocomplete="organization"></div>
+      <div class="field full"><textarea id="mensaje" placeholder="Cuéntenos su idea o proyecto..." required></textarea></div>
       <div class="field full"><button class="btn btn-red" type="submit">Enviar por WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></button></div>
-      <p class="form-note">No almacenamos tus datos. La consulta se prepara directamente en WhatsApp.</p>
+      <p class="form-note">No almacenamos sus datos. La consulta se prepara directamente en WhatsApp.</p>
     </form>
+  </div>
+</section>
+
+<!-- CRECIMIENTO 0k → 30k (Animado, limpio y sin cruces) -->
+<section id="crecimiento">
+  <div class="container">
+    <div class="growth card reveal" id="growthCard">
+      <div class="growth-head">
+        <div>
+          <span class="tag">// Crecimiento en 4 semanas</span>
+          <h2>De 0k a 30k seguidores<span class="red">.</span></h2>
+        </div>
+        <div class="growth-counter">
+          <strong id="gCount" aria-live="off">0k</strong>
+          <span>seguidores</span>
+        </div>
+      </div>
+
+      <svg class="growth-svg" viewBox="0 0 320 175" role="img" aria-label="Gráfico animado de crecimiento de 0k a 30k seguidores en cuatro semanas">
+        <line class="g-grid" x1="30" y1="140" x2="305" y2="140"/>
+        <line class="g-grid" x1="30" y1="100" x2="305" y2="100"/>
+        <line class="g-grid" x1="30" y1="60" x2="305" y2="60"/>
+        <line class="g-grid" x1="30" y1="20" x2="305" y2="20"/>
+        <text class="g-txt" x="24" y="143" text-anchor="end">0k</text>
+        <text class="g-txt" x="24" y="103" text-anchor="end">10k</text>
+        <text class="g-txt" x="24" y="63" text-anchor="end">20k</text>
+        <text class="g-txt" x="24" y="23" text-anchor="end">30k</text>
+
+        <text class="g-txt" x="30" y="160" text-anchor="middle">Inicio</text>
+        <text class="g-txt" x="95" y="160" text-anchor="middle">S1</text>
+        <text class="g-txt" x="160" y="160" text-anchor="middle">S2</text>
+        <text class="g-txt" x="225" y="160" text-anchor="middle">S3</text>
+        <text class="g-txt" x="290" y="160" text-anchor="middle">S4</text>
+
+        <path class="g-area" id="gArea" d=""/>
+        <path class="g-line" id="gLine" d=""/>
+        <circle class="g-pt" id="gp0" cx="95" cy="124" r="4"/>
+        <circle class="g-pt" id="gp1" cx="160" cy="96" r="4"/>
+        <circle class="g-pt" id="gp2" cx="225" cy="60" r="4"/>
+        <circle class="g-pt" id="gp3" cx="290" cy="20" r="4"/>
+        <circle class="g-dot" id="gDot" cx="30" cy="140" r="5"/>
+      </svg>
+
+      <div class="weeks" id="gWeeks">
+        <div class="week"><span class="week-name">SEMANA 1</span><strong class="week-val">0k</strong><i class="week-bar"><b></b></i></div>
+        <div class="week"><span class="week-name">SEMANA 2</span><strong class="week-val">0k</strong><i class="week-bar"><b></b></i></div>
+        <div class="week"><span class="week-name">SEMANA 3</span><strong class="week-val">0k</strong><i class="week-bar"><b></b></i></div>
+        <div class="week"><span class="week-name">SEMANA 4</span><strong class="week-val">0k</strong><i class="week-bar"><b></b></i></div>
+      </div>
+      <p class="growth-note">Ejemplo ilustrativo de crecimiento. Los resultados reales dependen de cada proyecto.</p>
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- =========================================
-     26. FOOTER
-     ========================================= -->
+<!-- FOOTER -->
 <footer>
   <div class="container footer-grid">
-    <a href="#inicio" class="logo" aria-label="+ Viral">+ Viral</a>
+    <a href="#inicio" class="footer-logo" aria-label="Marketing + Viral">
+      <span class="logo-white">MARKETING</span>
+      <span class="logo-red">+ VIRAL</span>
+    </a>
     <div class="footer-links">
       <a href="#servicios">Servicios</a>
       <a href="#planes">Planes</a>
@@ -1005,14 +1214,11 @@ footer { padding: 28px 0 calc(28px + var(--safe-b)); }
   </div>
 </footer>
 
-<!-- Botón flotante de WhatsApp -->
+<!-- Botón flotante de WhatsApp (Color oficial y logo limpio) -->
 <a href="https://wa.me/5492920247733" class="wa" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener">
   <svg class="ico"><use href="#i-whatsapp"/></svg>
 </a>
 
-<!-- =========================================
-     27. JAVASCRIPT (Funcionalidad)
-     ========================================= -->
 <script>
 // 1. Activar clases JS para animaciones de entrada
 document.documentElement.classList.add("js");
@@ -1022,7 +1228,7 @@ const CONFIG = { whatsapp: "5492920247733" };
 const $ = id => document.getElementById(id);
 const menuBtn = $("menuBtn"), navLinks = $("navLinks");
 
-// 3. Lógica del menú móvil
+// 3. Menú móvil
 function setMenu(open) {
   navLinks.classList.toggle("open", open);
   menuBtn.classList.toggle("open", open);
@@ -1033,7 +1239,7 @@ menuBtn.addEventListener("click", () => setMenu(!navLinks.classList.contains("op
 navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 addEventListener("resize", () => { if (innerWidth > 720) setMenu(false); });
 
-// 4. Intersection Observer para animaciones "reveal" al hacer scroll
+// 4. Animaciones "reveal" al hacer scroll
 const items = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(es => {
@@ -1049,21 +1255,21 @@ if ("IntersectionObserver" in window) {
   items.forEach(el => el.classList.add("visible"));
 }
 
-// 5. Selectores personalizados (reemplazan al select nativo)
+// 5. Selectores personalizados
 document.querySelectorAll(".contact-form select").forEach(sel => {
   const host = sel.parentElement;
   const opts = [...sel.options];
   const dd = document.createElement("div"); dd.className = "dd";
-  
+
   const btn = document.createElement("button");
   btn.type = "button"; btn.className = "dd-btn";
   btn.setAttribute("aria-haspopup", "listbox"); btn.setAttribute("aria-expanded", "false");
   btn.innerHTML = '<span class="dd-label"></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
   const label = btn.firstChild;
-  
+
   const list = document.createElement("ul"); list.className = "dd-list"; list.setAttribute("role", "listbox");
   const listItems = [];
-  
+
   opts.forEach((o, i) => {
     if (!o.value && i === 0) return;
     const li = document.createElement("li");
@@ -1071,7 +1277,7 @@ document.querySelectorAll(".contact-form select").forEach(sel => {
     li.addEventListener("click", () => { choose(li); close(); btn.focus(); });
     list.appendChild(li); listItems.push(li);
   });
-  
+
   dd.append(btn, list);
   sel.style.display = "none"; sel.tabIndex = -1; sel.setAttribute("aria-hidden", "true");
   host.appendChild(dd);
@@ -1083,21 +1289,21 @@ document.querySelectorAll(".contact-form select").forEach(sel => {
     btn.classList.toggle("filled", !!cur);
     listItems.forEach(li => li.classList.toggle("sel", li.dataset.v === cur));
   }
-  
+
   function choose(li) {
     const o = opts.find(x => (x.value || x.textContent) === li.dataset.v);
     sel.value = o.value || o.textContent;
     dd.classList.remove("error");
     sel.dispatchEvent(new Event("change"));
   }
-  
+
   function setActive(i) {
     if (!listItems.length) return;
     act = (i + listItems.length) % listItems.length;
     listItems.forEach((li, k) => li.classList.toggle("active", k === act));
     listItems[act].scrollIntoView({ block: "nearest" });
   }
-  
+
   function open() {
     document.querySelectorAll(".dd.open").forEach(d => d !== dd && d.classList.remove("open"));
     const r = btn.getBoundingClientRect();
@@ -1108,7 +1314,7 @@ document.querySelectorAll(".contact-form select").forEach(sel => {
     setActive(s >= 0 ? s : 0);
     if (s >= 0) list.scrollTop = Math.max(0, listItems[s].offsetTop - list.clientHeight / 2 + 23);
   }
-  
+
   function close() {
     dd.classList.remove("open"); btn.setAttribute("aria-expanded", "false");
     listItems.forEach(li => li.classList.remove("active"));
@@ -1124,7 +1330,7 @@ document.querySelectorAll(".contact-form select").forEach(sel => {
       if (isOpen) { e.preventDefault(); if (act >= 0) choose(listItems[act]); close(); }
     } else if (e.key === "Escape" || e.key === "Tab") { close(); }
   });
-  
+
   document.addEventListener("pointerdown", e => { if (!dd.contains(e.target)) close(); });
   listItems.forEach((li, k) => li.addEventListener("pointerenter", () => { if (matchMedia("(hover:hover)").matches) setActive(k); }));
   sel.addEventListener("change", sync);
@@ -1162,6 +1368,97 @@ $("contactForm").addEventListener("submit", e => {
   ].join("\n");
   window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
 });
+
+// 8. Crecimiento 0k → 30k (Animación suave y sin cruces)
+(function () {
+  const card = $("growthCard");
+  if (!card) return;
+
+  const V = [0, 4000, 11000, 20000, 30000];
+  const X = [30, 95, 160, 225, 290];
+  const Y = v => 140 - (v / 30000) * 120;
+  const line = $("gLine"), area = $("gArea"), dot = $("gDot"), count = $("gCount");
+  const pts = [0, 1, 2, 3].map(i => $("gp" + i));
+  const weeks = [...document.querySelectorAll("#gWeeks .week")];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const DURATION = 6500, HOLD = 3200;
+
+  function fmt(v) {
+    if (v >= 10000) return Math.round(v / 1000) + "k";
+    return (v / 1000).toFixed(1).replace(".0", "") + "k";
+  }
+
+  function render(t) {
+    const i = Math.min(Math.floor(t), 3);
+    const f = t >= 4 ? 1 : t - i;
+    const v = V[i] + (V[i + 1] - V[i]) * f;
+    const x = X[i] + (X[i + 1] - X[i]) * f;
+    const y = Y(v);
+
+    let d = "M" + X[0] + " " + Y(V[0]);
+    for (let k = 1; k <= i; k++) {
+      d += " L" + X[k] + " " + Y(V[k]).toFixed(1);
+    }
+    d += " L" + x.toFixed(1) + " " + y.toFixed(1);
+    
+    // El área se cierra perfectamente hacia abajo, evitando cualquier cruce
+    line.setAttribute("d", d);
+    area.setAttribute("d", d + " L" + x.toFixed(1) + " 140 L" + X[0] + " 140 Z");
+    dot.setAttribute("cx", x.toFixed(1));
+    dot.setAttribute("cy", y.toFixed(1));
+    count.textContent = fmt(v);
+
+    pts.forEach((p, k) => p.classList.toggle("on", t >= k + 1 - 0.001));
+
+    weeks.forEach((w, k) => {
+      const start = k;
+      const prev = V[k];
+      const cur = V[k + 1];
+      const prog = Math.max(0, Math.min(1, t - start));
+      const shown = t < start ? 0 : prev + (cur - prev) * prog;
+      w.querySelector(".week-val").textContent = t < start ? "0k" : fmt(shown);
+      w.querySelector(".week-bar b").style.height = (t < start ? 0 : (shown / 30000) * 100) + "%";
+      w.classList.toggle("active", t >= start && t < start + 1);
+      w.classList.toggle("done", t >= start + 1);
+    });
+  }
+
+  if (reduce) { render(4); return; }
+
+  let running = false, raf = 0, startTime = 0, holdUntil = 0;
+
+  function frame(now) {
+    if (!running) return;
+    if (holdUntil) {
+      if (now >= holdUntil) { holdUntil = 0; startTime = now; }
+      raf = requestAnimationFrame(frame);
+      return;
+    }
+    const p = Math.min(1, (now - startTime) / DURATION);
+    render(p * 4);
+    if (p >= 1) holdUntil = now + HOLD;
+    raf = requestAnimationFrame(frame);
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
+    startTime = performance.now();
+    holdUntil = 0;
+    raf = requestAnimationFrame(frame);
+  }
+  function stop() { running = false; cancelAnimationFrame(raf); }
+
+  render(0);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(es => {
+      es.forEach(e => e.isIntersecting ? start() : stop());
+    }, { threshold: .25 }).observe(card);
+  } else {
+    start();
+  }
+})();
 </script>
 </body>
-         </html>
+     </html>

@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="mas.viral - Marketing, contenido, diseño web y crecimiento digital.">
+<title>mas.viral | + VIRAL</title>
+
+<style>
+:root{
+--bg:#080808;
+--panel:#101010;
+--panel2:#151515;
+--white:#f4f4f4;
+--gray:#999;
+--border:#343434;
+--red:#f02035;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+background:var(--bg);
+color:var(--white);
+font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+.container{width:min(1160px,92%);margin:auto}
+.red{color:var(--red)}
+.tag{
+color:var(--red);
+font-size:10px;
+letter-spacing:2px;
+font-weight:bold;
+text-transform:uppercase;
+}
+.outline{border:1px solid var(--border);border-radius:13px}
+section{padding:75px 0;border-bottom:1px solid #202020}
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:25px;
+margin-bottom:28px;
+}
+.section-head h2{
+font-size:clamp(27px,4vw,42px);
+letter-spacing:-1.8px;
+line-height:1.05;
+margin-top:9px;
+}
+.section-head p{
+color:var(--gray);
+font-size:12px;
+line-height:1.8;
+max-width:310px;
+}
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:13px 19px;
+border:1px solid #555;
+border-radius:7px;
+color:white;
+background:transparent;
+font-size:11px;
+font-weight:bold;
+transition:.25s;
+}
+.btn:hover{border-color:var(--red);color:var(--red)}
+.btn-red{background:var(--red);border-color:var(--red)}
+.btn-red:hover{background:#c91528;color:white}
+.btn svg{width:15px;height:15px}
+
+/* ICONOS */
+.ico{
+width:27px;
+height:27px;
+fill:none;
+stroke:currentColor;
+stroke-width:1.5;
+stroke-linecap:round;
+stroke-linejoin:round;
+flex-shrink:0;
+}
+.icon-circle{
+width:46px;
+height:46px;
+display:grid;
+place-items:center;
+border:1px solid #555;
+border-radius:50%;
+color:white;
+}
+.icon-circle .ico{width:22px;height:22px}
+
+/* NAVEGACIÓN */
+header{
+height:68px;
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(8,8,8,.94);
+border-bottom:1px solid var(--border);
+backdrop-filter:blur(16px);
+}
+.nav{
+height:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo{
+font-size:25px;
+font-weight:900;
+letter-spacing:-1.5px;
+}
+.logo span{color:var(--red)}
+.nav-links{
+display:flex;
+align-items:center;
+gap:22px;
+font-size:10px;
+color:#bbb;
+}
+.nav-links a:hover{color:var(--red)}
+.nav-links .active{color:white}
+.menu-btn{
+display:none;
+background:none;
+border:0;
+color:white;
+font-size:25px;
+}
+
+/* PORTADA */
+.hero{
+min-height:480px;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:30px;
+}
+.hero-label{
+display:inline-block;
+border:1px solid #555;
+border-radius:30px;
+padding:8px 13px;
+font-size:9px;
+letter-spacing:1.5px;
+color:#ccc;
+margin-bottom:22px;
+}
+.hero h1{
+font-size:clamp(43px,6.5vw,76px);
+line-height:.98;
+letter-spacing:-4px;
+font-weight:900;
+}
+.hero h1 span{color:var(--red)}
+.hero-description{
+color:#aaa;
+font-size:13px;
+line-height:1.8;
+max-width:440px;
+margin:19px 0;
+}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.hero-trust{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:27px;
+}
+.trust-item{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:10px;
+color:#aaa;
+}
+.trust-item .ico{width:19px;height:19px;color:white}
+
+/* MOCKUP */
+.hero-visual{
+min-height:370px;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.hero-orbit{
+position:absolute;
+width:280px;
+height:280px;
+border:1px solid var(--red);
+border-radius:50%;
+box-shadow:0 0 60px #f0203518;
+}
+.phone{
+position:relative;
+z-index:2;
+width:175px;
+height:320px;
+border:2px solid #777;
+border-radius:28px;
+background:linear-gradient(145deg,#252525,#070707);
+padding:10px;
+transform:rotate(-9deg);
+box-shadow:20px 25px 60px #000;
+}
+.phone-screen{
+width:100%;
+height:100%;
+border-radius:20px;
+background:
+linear-gradient(#0005,#000a),
+url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:20px 12px;
+}
+.phone-brand{
+font-size:22px;
+font-weight:900;
+text-align:center;
+margin-top:55px;
+}
+.phone-brand span{color:var(--red)}
+.phone-plus{
+font-size:90px;
+color:var(--red);
+text-align:center;
+font-weight:200;
+}
+.phone-bottom{
+font-size:9px;
+color:white;
+text-align:center;
+letter-spacing:2px;
+}
+.float-card{
+position:absolute;
+z-index:3;
+border:1px solid #555;
+border-radius:12px;
+background:#101010ed;
+padding:17px;
+}
+.float-card strong{font-size:22px;display:block;margin:8px 0}
+.float-card span{font-size:10px;color:#aaa}
+.float-one{right:0;top:80px;width:130px}
+.float-two{left:0;bottom:45px;display:flex;gap:12px;align-items:center}
+.float-two .ico{color:var(--red)}
+
+/* CINTA */
+.marquee{
+overflow:hidden;
+white-space:nowrap;
+padding:17px 0;
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+}
+.marquee-track{
+display:inline-flex;
+gap:28px;
+animation:marquee 30s linear infinite;
+font-size:11px;
+font-weight:bold;
+letter-spacing:2px;
+}
+.marquee span{color:var(--red)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* SERVICIOS */
+.services-layout{
+display:grid;
+grid-template-columns:220px 1fr;
+gap:25px;
+align-items:center;
+}
+.services-intro h2{
+font-size:37px;
+line-height:1.05;
+letter-spacing:-2px;
+margin:13px 0;
+}
+.services-intro p{
+font-size:12px;
+color:var(--gray);
+line-height:1.8;
+}
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+.service{
+padding:18px;
+min-height:145px;
+background:#0c0c0c;
+transition:.25s;
+}
+.service:hover{border-color:var(--red);transform:translateY(-3px)}
+.service .ico{margin-bottom:15px}
+.service h3{font-size:12px;margin-bottom:7px}
+.service p{font-size:10px;color:var(--gray);line-height:1.7}
+
+/* PLANES */
+.plans-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+align-items:stretch;
+}
+.plan{
+position:relative;
+padding:23px;
+background:#0c0c0c;
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+.plan.featured{
+border-color:var(--red);
+background:linear-gradient(150deg,#210d10,#0c0c0c);
+}
+.plan-badge{
+position:absolute;
+top:-11px;
+right:18px;
+background:var(--red);
+padding:5px 11px;
+border-radius:20px;
+font-size:9px;
+font-weight:bold;
+}
+.plan-top{display:flex;align-items:center;gap:13px}
+.plan h3{font-size:16px}
+.plan-price{
+font-size:27px;
+font-weight:900;
+letter-spacing:-1px;
+}
+.plan-price small{
+font-size:10px;
+color:var(--gray);
+font-weight:normal;
+letter-spacing:0;
+}
+.plan ul{
+list-style:none;
+display:grid;
+gap:11px;
+flex:1;
+}
+.plan li{
+font-size:11px;
+color:#bbb;
+display:flex;
+gap:9px;
+align-items:start;
+line-height:1.5;
+}
+.plan li span{color:var(--red);font-weight:bold}
+.plan .btn{width:100%;margin-top:5px}
+
+/* PROCESO */
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+.process{
+padding:20px;
+position:relative;
+background:#0c0c0c;
+}
+.process-number{
+color:var(--red);
+font-size:11px;
+font-weight:bold;
+}
+.process h3{font-size:13px;margin:15px 0 8px}
+.process p{font-size:10px;color:var(--gray);line-height:1.7}
+.process .ico{margin-top:10px}
+
+/* RESULTADOS Y BENEFICIOS */
+.achieve-layout{
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:15px;
+}
+.achieve-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+.achieve{
+position:relative;
+overflow:hidden;
+min-height:150px;
+background:#111;
+}
+.achieve img{
+width:100%;
+height:100%;
+position:absolute;
+inset:0;
+object-fit:cover;
+opacity:.38;
+transition:.4s;
+}
+.achieve:hover img{opacity:.55;transform:scale(1.05)}
+.achieve-content{
+position:absolute;
+inset:0;
+padding:17px;
+display:flex;
+flex-direction:column;
+justify-content:end;
+background:linear-gradient(transparent,#000e);
+}
+.achieve-content .ico{margin-bottom:12px}
+.achieve h3{font-size:13px;margin-bottom:5px}
+.achieve p{font-size:10px;color:#ccc;line-height:1.6}
+.numbers{
+padding:22px;
+background:#0d0d0d;
+}
+.numbers h3{font-size:12px;color:var(--red);letter-spacing:1px}
+.numbers-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+margin-top:18px;
+}
+.number{
+padding:15px 5px;
+border-bottom:1px solid var(--border);
+}
+.number:nth-child(odd){border-right:1px solid var(--border)}
+.number:nth-child(even){padding-left:17px}
+.number:nth-child(n+3){border-bottom:0}
+.number strong{font-size:27px;display:block}
+.number span{font-size:10px;color:var(--gray)}
+
+/* CLIENTES IDEALES: TRES TARJETAS IGUALES Y CENTRADAS */
+.audience-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ grid-auto-rows:1fr;
+ align-items:stretch;
+ gap:14px;
+}
+.audience{
+ min-width:0;
+ min-height:250px;
+ height:100%;
+ padding:26px 22px;
+ background:#0d0d0d;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ border:1px solid var(--border);
+ border-radius:13px;
+}
+.audience .icon-circle{
+ width:48px;
+ height:48px;
+ margin:0 auto 8px;
+}
+.audience h3{
+ width:100%;
+ min-height:42px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ margin:10px 0 9px;
+ font-size:14px;
+ line-height:1.4;
+}
+.audience p{
+ width:100%;
+ max-width:260px;
+ margin:0 auto;
+ font-size:11px;
+ color:var(--gray);
+ line-height:1.7;
+}
+@media(max-width:850px){
+ .audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ .audience-grid{grid-template-columns:1fr;gap:12px}
+ .audience{min-height:215px;padding:25px 22px}
+}
+
+/* FAQ */
+/* FAQ */
+.faq-layout{
+display:grid;
+grid-template-columns:230px 1fr;
+gap:30px;
+}
+.faq-title h2{
+font-size:35px;
+letter-spacing:-2px;
+line-height:1.05;
+margin:12px 0;
+}
+.faq-title p{font-size:11px;color:var(--gray);line-height:1.8}
+.faq-list{display:grid;gap:8px}
+.faq details{
+border:1px solid var(--border);
+border-radius:8px;
+padding:16px;
+background:#0c0c0c;
+}
+.faq summary{
+list-style:none;
+cursor:pointer;
+font-size:12px;
+display:flex;
+justify-content:space-between;
+gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{
+content:"+";
+color:var(--red);
+font-size:18px;
+}
+.faq details[open] summary:after{content:"−"}
+.faq details p{
+font-size:11px;
+color:var(--gray);
+line-height:1.8;
+padding-top:12px;
+max-width:650px;
+}
+
+/* CONTACTO */
+.contact-layout{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:35px;
+}
+.contact-title{
+font-size:clamp(38px,5vw,58px);
+letter-spacing:-3px;
+line-height:1;
+margin:15px 0;
+}
+.contact-description{
+font-size:12px;
+color:var(--gray);
+line-height:1.8;
+}
+.contact-socials{
+display:flex;
+gap:10px;
+margin-top:25px;
+}
+.contact-socials a{
+width:39px;
+height:39px;
+display:grid;
+place-items:center;
+border:1px solid var(--border);
+border-radius:50%;
+}
+.contact-socials a:hover{border-color:var(--red);color:var(--red)}
+.contact-socials .ico{width:18px;height:18px}
+.contact-form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:11px;
+align-content:start;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+width:100%;
+background:#101010;
+color:white;
+border:1px solid var(--border);
+border-radius:7px;
+padding:14px;
+font-size:11px;
+outline:none;
+min-width:0;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{border-color:var(--red)}
+.contact-form select{color:#aaa}
+.contact-form select option{background:#111;color:white}
+.contact-form textarea{grid-column:1/-1;min-height:105px;resize:vertical}
+.contact-form button{grid-column:1/-1;width:100%}
+.form-note{grid-column:1/-1;color:#777;font-size:9px;line-height:1.6}
+
+/* FOOTER */
+footer{padding:24px 0}
+.footer-grid{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap;
+}
+.footer-copy{font-size:9px;color:#777}
+.footer-links{display:flex;gap:17px;font-size:10px;color:#aaa}
+.footer-links a:hover{color:var(--red)}
+
+/* WHATSAPP */
+.wa{
+position:fixed;
+bottom:17px;
+right:17px;
+z-index:90;
+width:51px;
+height:51px;
+display:grid;
+place-items:center;
+border-radius:50%;
+background:var(--red);
+color:white;
+border:1px solid #ff7885;
+box-shadow:0 5px 25px #000;
+transition:.2s;
+}
+.wa:hover{transform:scale(1.08)}
+.wa .ico{width:23px;height:23px}
+
+/* ANIMACIONES */
+.reveal{
+opacity:0;
+transform:translateY(18px);
+transition:.65s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:850px){
+.nav-links{gap:12px;font-size:9px}
+.services-layout{grid-template-columns:1fr}
+.services-intro{max-width:500px}
+.process-grid{grid-template-columns:1fr 1fr}
+.achieve-layout{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+section{padding:58px 0}
+header{height:62px}
+.menu-btn{display:block}
+.nav-links{
+display:none;
+position:absolute;
+top:62px;
+left:0;
+right:0;
+padding:22px 5%;
+background:#101010;
+border-bottom:1px solid var(--border);
+flex-direction:column;
+align-items:stretch;
+gap:0;
+}
+.nav-links.open{display:flex}
+.nav-links a{padding:13px 0;border-bottom:1px solid #222;font-size:11px}
+.nav-links .btn{margin-top:12px}
+.hero{padding:55px 0}
+.hero-grid{grid-template-columns:1fr;gap:5px}
+.hero h1{font-size:clamp(43px,11vw,62px);letter-spacing:-3px}
+.hero-visual{min-height:320px}
+.hero-orbit{width:230px;height:230px}
+.phone{width:145px;height:270px}
+.float-one{right:0;top:45px}
+.float-two{left:0;bottom:20px}
+.hero-trust{gap:13px}
+.section-head{align-items:start;flex-direction:column}
+.services-grid{grid-template-columns:1fr 1fr}
+.plans-grid{grid-template-columns:1fr}
+.plan{padding:22px}
+.process-grid{grid-template-columns:1fr 1fr}
+.faq-layout{grid-template-columns:1fr;gap:20px}
+.contact-layout{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:390px){
+.container{width:92%}
+.services-grid{grid-template-columns:1fr}
+.process-grid{grid-template-columns:1fr 1fr}
+.achieve-grid{grid-template-columns:1fr}
+.hero-trust{display:grid;grid-template-columns:1fr 1fr}
+.contact-form{grid-template-columns:1fr}
+.contact-form textarea,.contact-form button,.form-note{grid-column:1}
+.footer-grid{justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation:none!important;transition:none!important}
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ICONOS SVG REUTILIZABLES -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-arrow" viewBox="0 0 24 24">
+<path d="M5 12h14M13 5l7 7-7 7"/>
+</symbol>
+<symbol id="i-chart" viewBox="0 0 24 24">
+<path d="M3 20h18M5 17v-5h4v5M11 17V7h4v10M17 17V3h4v14"/>
+</symbol>
+<symbol id="i-megaphone" viewBox="0 0 24 24">
+<path d="M3 10v4h4l12 6V4L7 10H3zM7 14l2 7h4l-2-5"/>
+</symbol>
+<symbol id="i-video" viewBox="0 0 24 24">
+<rect x="2" y="4" width="20" height="16" rx="3"/>
+<path d="m10 8 6 4-6 4z"/>
+</symbol>
+<symbol id="i-web" viewBox="0 0 24 24">
+<rect x="2" y="3" width="20" height="18" rx="2"/>
+<path d="M2 8h20M6 5.5h.1M9 5.5h.1M12 12h7v5h-7z"/>
+</symbol>
+<symbol id="i-users" viewBox="0 0 24 24">
+<circle cx="9" cy="8" r="4"/>
+<path d="M2 21v-2a7 7 0 0 1 14 0v2M16 4a4 4 0 0 1 0 8M19 15a5 5 0 0 1 3 4v2"/>
+</symbol>
+<symbol id="i-target" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"/>
+<circle cx="12" cy="12" r="5"/>
+<circle cx="12" cy="12" r="1"/>
+<path d="m13 11 8-8M16 3h5v5"/>
+</symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24">
+<path d="M12 20c5-3 8-8 8-17-9 0-14 3-17 8l9 9zM8 16l-5 5M7 10l7 7"/>
+<circle cx="15" cy="8" r="2"/>
+</symbol>
+<symbol id="i-message" viewBox="0 0 24 24">
+<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.8-4.5A8 8 0 1 1 21 11.5z"/>
+</symbol>
+<symbol id="i-file" viewBox="0 0 24 24">
+<path d="M5 2h10l4 4v16H5zM15 2v5h4M8 12h8M8 16h8"/>
+</symbol>
+<symbol id="i-heart" viewBox="0 0 24 24">
+<path d="M20.8 8.5c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11a4.5 4.5 0 0 1 8.8-1.3 4.5 4.5 0 0 1 8.8 1.3z"/>
+</symbol>
+<symbol id="i-eye" viewBox="0 0 24 24">
+<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
+<circle cx="12" cy="12" r="3"/>
+</symbol>
+<symbol id="i-star" viewBox="0 0 24 24">
+<path d="m12 2 3 7h7l-5.5 4.5 2 8L12 17l-6.5 4.5 2-8L2 9h7z"/>
+</symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24">
+<rect x="3" y="3" width="18" height="18" rx="5"/>
+<circle cx="12" cy="12" r="4"/>
+<path d="M17.5 6.5h.1"/>
+</symbol>
+<symbol id="i-tiktok" viewBox="0 0 24 24">
+<path d="M14 3v12a4 4 0 1 1-4-4M14 3c1 4 3 5 7 5"/>
+</symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24">
+<path d="M20.5 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5a8.5 8.5 0 1 1 15.5-4.5z"/>
+<path d="M9 8c0 4 3 7 7 7l1-2-3-1-1 1-3-3 1-1-1-2z"/>
+</symbol>
+</svg>
+
+<header>
+<div class="container nav">
+<a href="#inicio" class="logo">mas.<span>viral</span></a>
+<nav class="nav-links" id="navLinks">
+<a class="active" href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#planes">Planes</a>
+<a href="#proceso">Proceso</a>
+<a href="#logros">Qué logramos</a>
+<a href="#faq">FAQ</a>
+<a href="#contacto" class="btn">Pedir propuesta <svg class="ico"><use href="#i-arrow"/></svg></a>
+</nav>
+<button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+</div>
+</header>
+
+<main>
+
+<!-- PORTADA -->
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div class="reveal">
+<div class="hero-label">AGENCIA DE MARKETING · CREADORES</div>
+<h1>Hacemos que<br>tu marca sea<br><span>+ Viral.</span></h1>
+<p class="hero-description">
+Contenido, redes y publicidad para negocios y creadores.
+Contanos tu idea y te mandamos una propuesta sin costo.
+</p>
+<div class="hero-buttons">
+<a href="#contacto" class="btn btn-red">Pedir propuesta gratis <svg class="ico"><use href="#i-arrow"/></svg></a>
+<a href="#servicios" class="btn">Descubrir más ↓</a>
+</div>
+<div class="hero-trust">
+<div class="trust-item"><svg class="ico"><use href="#i-chart"/></svg> Respuesta en 24 hs</div>
+<div class="trust-item"><svg class="ico"><use href="#i-star"/></svg> Planes flexibles</div>
+<div class="trust-item"><svg class="ico"><use href="#i-target"/></svg> Objetivos medibles</div>
+</div>
+</div>
+
+<div class="hero-visual reveal">
+<div class="hero-orbit"></div>
+<div class="phone">
+<div class="phone-screen">
+<div class="phone-brand">mas.<span>viral</span></div>
+<div class="phone-plus">+</div>
+<div class="phone-bottom">CREAMOS · CONECTAMOS</div>
+</div>
+</div>
+<div class="float-card float-one">
+<svg class="ico"><use href="#i-chart"/></svg>
+<strong>+ VIRAL</strong>
+<span>Más visibilidad para tu marca</span>
+</div>
+<div class="float-card float-two">
+<svg class="ico"><use href="#i-target"/></svg>
+<span>IDEAS QUE<br>GENERAN IMPACTO</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CINTA -->
+<div class="marquee">
+<div class="marquee-track">
+<span>+ VIRAL</span> × MARKETING × CONTENIDO × CREATIVIDAD × CRECIMIENTO ×
+<span>+ VIRAL</span> × MARKETING × CONTENIDO × CREATIVIDAD × CRECIMIENTO ×
+<span>+ VIRAL</span> × MARKETING × CONTENIDO × CREATIVIDAD × CRECIMIENTO ×
+</div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+<div class="container services-layout">
+<div class="services-intro reveal">
+<span class="tag">// LO QUE HACEMOS</span>
+<h2>Nuestros<br>servicios<span class="red">.</span></h2>
+<p>Soluciones creativas para construir, posicionar y hacer crecer tu presencia digital.</p>
+</div>
+<div class="services-grid">
+<article class="service outline reveal">
+<svg class="ico"><use href="#i-megaphone"/></svg>
+<h3>Marketing digital</h3>
+<p>Estrategias para posicionar y hacer crecer tu marca.</p>
+</article>
+<article class="service outline reveal">
+<svg class="ico"><use href="#i-video"/></svg>
+<h3>Creación de contenido</h3>
+<p>Videos, reels y publicaciones que captan atención.</p>
+</article>
+<article class="service outline reveal">
+<svg class="ico"><use href="#i-web"/></svg>
+<h3>Diseño web</h3>
+<p>Sitios modernos y profesionales para tu negocio.</p>
+</article>
+<article class="service outline reveal">
+<svg class="ico"><use href="#i-users"/></svg>
+<h3>Redes sociales</h3>
+<p>Gestión, planificación y desarrollo de comunidad.</p>
+</article>
+<article class="service outline reveal">
+<svg class="ico"><use href="#i-star"/></svg>
+<h3>Creadores e influencers</h3>
+<p>Conectamos tu marca con nuevas audiencias.</p>
+</article>
+<article class="service outline reveal">
+<svg class="ico"><use href="#i-chart"/></svg>
+<h3>Publicidad digital</h3>
+<p>Más alcance, oportunidades y clientes potenciales.</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- PLANES -->
+<section id="planes">
+<div class="container">
+<div class="section-head reveal">
+<div><span class="tag">// PLANES</span><h2>Elegí tu plan<span class="red">.</span></h2></div>
+<p>Precios de referencia. Cada propuesta se puede adaptar a tu proyecto.</p>
+</div>
+<div class="plans-grid">
+
+<article class="plan outline reveal">
+<div class="plan-top">
+<div class="icon-circle"><svg class="ico"><use href="#i-rocket"/></svg></div>
+<h3>Arranque</h3>
+</div>
+<div class="plan-price">USD 99 <small>/ mes</small></div>
+<ul>
+<li><span>✓</span> 12 publicaciones al mes</li>
+<li><span>✓</span> Diseño de piezas</li>
+<li><span>✓</span> Calendario de contenido</li>
+<li><span>✓</span> Reporte mensual</li>
+</ul>
+<a href="#contacto" class="btn">Seleccionar plan <svg class="ico"><use href="#i-arrow"/></svg></a>
+</article>
+
+<article class="plan outline featured reveal">
+<span class="plan-badge">MÁS ELEGIDO</span>
+<div class="plan-top">
+<div class="icon-circle"><svg class="ico"><use href="#i-chart"/></svg></div>
+<h3>Crecimiento</h3>
+</div>
+<div class="plan-price">USD 249 <small>/ mes</small></div>
+<ul>
+<li><span>✓</span> 20 publicaciones + 8 reels</li>
+<li><span>✓</span> Gestión de comunidad</li>
+<li><span>✓</span> Campaña publicitaria base</li>
+<li><span>✓</span> Reporte quincenal</li>
+<li><span>✓</span> Soporte por WhatsApp</li>
+</ul>
+<a href="#contacto" class="btn btn-red">Seleccionar plan <svg class="ico"><use href="#i-arrow"/></svg></a>
+</article>
+
+<article class="plan outline reveal">
+<div class="plan-top">
+<div class="icon-circle"><svg class="ico"><use href="#i-star"/></svg></div>
+<h3>Impacto</h3>
+</div>
+<div class="plan-price">A medida</div>
+<ul>
+<li><span>✓</span> Estrategia integral</li>
+<li><span>✓</span> Creadores e influencers</li>
+<li><span>✓</span> Web y embudo de ventas</li>
+<li><span>✓</span> Publicidad avanzada</li>
+<li><span>✓</span> Responsable de cuenta</li>
+</ul>
+<a href="#contacto" class="btn">Contactar <svg class="ico"><use href="#i-arrow"/></svg></a>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+<div class="container">
+<div class="section-head reveal">
+<div><span class="tag">// CÓMO TRABAJAMOS</span><h2>Nuestro proceso<span class="red">.</span></h2></div>
+<p>Un sistema sencillo, organizado y transparente.</p>
+</div>
+<div class="process-grid">
+<article class="process outline reveal">
+<span class="process-number">01 / CONSULTA</span>
+<svg class="ico"><use href="#i-message"/></svg>
+<h3>Nos conocemos</h3>
+<p>Nos contás tu proyecto, tus objetivos y qué necesitás.</p>
+</article>
+<article class="process outline reveal">
+<span class="process-number">02 / PROPUESTA</span>
+<svg class="ico"><use href="#i-file"/></svg>
+<h3>Diseñamos el plan</h3>
+<p>Preparamos una propuesta adaptada a tu negocio.</p>
+</article>
+<article class="process outline reveal">
+<span class="process-number">03 / EJECUCIÓN</span>
+<svg class="ico"><use href="#i-rocket"/></svg>
+<h3>Lo hacemos realidad</h3>
+<p>Producimos contenido y desarrollamos las acciones.</p>
+</article>
+<article class="process outline reveal">
+<span class="process-number">04 / MEDICIÓN</span>
+<svg class="ico"><use href="#i-chart"/></svg>
+<h3>Optimizamos</h3>
+<p>Evaluamos resultados y buscamos nuevas oportunidades.</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- QUÉ SE PUEDE LOGRAR -->
+<section id="logros">
+<div class="container">
+<div class="section-head reveal">
+<div><span class="tag">// LO QUE PODÉS LOGRAR</span><h2>Más visibilidad,<br>más oportunidades<span class="red">.</span></h2></div>
+<p>Herramientas y estrategias para llevar tu proyecto a otro nivel.</p>
+</div>
+
+<div class="achieve-layout">
+<div class="achieve-grid">
+
+<article class="achieve outline reveal">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700" alt="Equipo trabajando en una estrategia">
+<div class="achieve-content">
+<svg class="ico"><use href="#i-eye"/></svg>
+<h3>Más alcance</h3>
+<p>Tu marca frente a nuevas audiencias.</p>
+</div>
+</article>
+
+<article class="achieve outline reveal">
+<img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700" alt="Comunidad y trabajo en equipo">
+<div class="achieve-content">
+<svg class="ico"><use href="#i-users"/></svg>
+<h3>Más comunidad</h3>
+<p>Seguidores reales y comprometidos.</p>
+</div>
+</article>
+
+<article class="achieve outline reveal">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700" alt="Análisis y crecimiento digital">
+<div class="achieve-content">
+<svg class="ico"><use href="#i-chart"/></svg>
+<h3>Más oportunidades</h3>
+<p>Más consultas y potenciales clientes.</p>
+</div>
+</article>
+
+<article class="achieve outline reveal">
+<img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=700" alt="Diseño e identidad visual">
+<div class="achieve-content">
+<svg class="ico"><use href="#i-star"/></svg>
+<h3>Más posicionamiento</h3>
+<p>Una identidad que destaque en tu rubro.</p>
+</div>
+</article>
+
+</div>
+
+<div class="numbers outline reveal">
+<h3>// NUESTRA FORMA DE TRABAJAR</h3>
+<div class="numbers-grid">
+<div class="number"><strong>360°</strong><span>Visión integral</span></div>
+<div class="number"><strong>6</strong><span>Áreas de servicio</span></div>
+<div class="number"><strong>24h</strong><span>Objetivo de respuesta</span></div>
+<div class="number"><strong>100%</strong><span>Enfoque personalizado</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- AUDIENCIA -->
+<section id="audiencia">
+<div class="container">
+<div class="section-head reveal">
+<div><span class="tag">// PARA QUIÉN</span><h2>Trabajamos con vos<span class="red">.</span></h2></div>
+<p>Nos adaptamos a distintos proyectos, industrias y objetivos.</p>
+</div>
+<div class="audience-grid">
+<article class="audience outline reveal">
+<div class="icon-circle"><svg class="ico"><use href="#i-web"/></svg></div>
+<h3>Negocios y marcas</h3>
+<p>Más presencia, comunicación y oportunidades para tu empresa.</p>
+</article>
+<article class="audience outline reveal">
+<div class="icon-circle"><svg class="ico"><use href="#i-rocket"/></svg></div>
+<h3>Emprendedores</h3>
+<p>Una identidad profesional para comenzar a crecer.</p>
+</article>
+<article class="audience outline reveal">
+<div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div>
+<h3>Creadores y artistas</h3>
+<p>Marca personal, contenido y nuevas colaboraciones.</p>
+</article>
+</div>
+</div>
+</section>
+
+<!-- PREGUNTAS -->
+<section id="faq">
+<div class="container faq-layout">
+<div class="faq-title reveal">
+<span class="tag">// DUDAS</span>
+<h2>Preguntas<br>frecuentes<span class="red">.</span></h2>
+<p>Resolvemos tus dudas para que puedas empezar con tranquilidad.</p>
+</div>
+<div class="faq faq-list reveal">
+<details>
+<summary>¿Cuánto tardan en responder?</summary>
+<p>Buscamos responder las consultas dentro de las primeras 24 horas hábiles.</p>
+</details>
+<details>
+<summary>¿Hay contrato de permanencia?</summary>
+<p>Las condiciones de contratación se detallan en cada propuesta antes de comenzar.</p>
+</details>
+<details>
+<summary>¿Cómo se paga?</summary>
+<p>Los medios de pago y las condiciones se coordinan al aprobar el presupuesto.</p>
+</details>
+<details>
+<summary>¿Puedo contratar un solo servicio?</summary>
+<p>Sí. Podés solicitar diseño web, contenido, publicidad o cualquier servicio por separado.</p>
+</details>
+<details>
+<summary>¿Trabajan con cualquier rubro?</summary>
+<p>Evaluamos cada proyecto para ofrecer una estrategia adecuada a sus necesidades.</p>
+</details>
+</div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+<div class="container contact-layout">
+<div class="reveal">
+<span class="tag">// HABLEMOS</span>
+<h2 class="contact-title">Tu próxima idea<br>puede ser <span class="red">viral.</span></h2>
+<p class="contact-description">
+Contanos qué necesitás. Analizamos tu proyecto y preparamos una propuesta para ayudarte a crecer.
+</p>
+<div class="contact-socials">
+<a href="https://instagram.com/" target="_blank" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a>
+<a href="https://tiktok.com/" target="_blank" aria-label="TikTok"><svg class="ico"><use href="#i-tiktok"/></svg></a>
+</div>
+</div>
+
+<form class="contact-form reveal" id="contactForm">
+<input id="nombre" placeholder="Tu nombre" required>
+<input id="dato" placeholder="Tu WhatsApp o correo" required>
+<select id="servicio" required>
+<option value="">¿Qué necesitás?</option>
+<option>Marketing digital</option>
+<option>Creación de contenido</option>
+<option>Diseño web</option>
+<option>Redes sociales</option>
+<option>Creadores e influencers</option>
+<option>Publicidad digital</option>
+<option>Plan integral</option>
+<option>Otra consulta</option>
+</select>
+<select id="presupuesto">
+<option value="">Presupuesto aproximado (opcional)</option>
+<option>Menos de USD 100</option>
+<option>USD 100 - 300</option>
+<option>USD 300 - 1000</option>
+<option>Más de USD 1000</option>
+</select>
+<input id="empresa" placeholder="Nombre de tu negocio (opcional)">
+<textarea id="mensaje" placeholder="Contanos tu idea o proyecto..." required></textarea>
+<button class="btn btn-red" type="submit">Enviar por WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></button>
+<p class="form-note">No almacenamos tus datos. La consulta se prepara directamente en WhatsApp.</p>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container footer-grid">
+<a href="#inicio" class="logo">mas.<span>viral</span></a>
+<div class="footer-links">
+<a href="#servicios">Servicios</a>
+<a href="#planes">Planes</a>
+<a href="#contacto">Contacto</a>
+</div>
+<span class="footer-copy">© 2026 MAS.VIRAL · TODOS LOS DERECHOS RESERVADOS</span>
+</div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+<svg class="ico"><use href="#i-whatsapp"/></svg>
+</a>
+
+<script>
+// ================================================
+// CONFIGURACIÓN PRINCIPAL
+// Editar aquí WhatsApp, redes y datos de contacto.
+// ================================================
+const CONFIG={
+ whatsapp:"5492920247733",
+ instagram:"https://instagram.com/",
+ tiktok:"https://tiktok.com/"
+};
+
+// ================================================
+// MENÚ PARA CELULARES
+// ================================================
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+ navLinks.classList.toggle("open");
+ menuBtn.textContent=navLinks.classList.contains("open")?"×":"☰";
+});
+
+navLinks.querySelectorAll("a").forEach(a=>{
+ a.addEventListener("click",()=>{
+  navLinks.classList.remove("open");
+  menuBtn.textContent="☰";
+ });
+});
+
+// ================================================
+// ANIMACIONES DE APARICIÓN
+// ================================================
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("visible");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+ observer.observe(el);
+});
+
+// ================================================
+// WHATSAPP DIRECTO
+// ================================================
+const waBase="https://wa.me/"+CONFIG.whatsapp;
+
+document.getElementById("waFloat").href=
+ waBase+"?text="+encodeURIComponent("Hola mas.viral, quiero realizar una consulta.");
+
+// ================================================
+// FORMULARIO DE CONTACTO
+// Prepara el mensaje y abre WhatsApp.
+// ================================================
+document.getElementById("contactForm").addEventListener("submit",e=>{
+ e.preventDefault();
+
+ const get=id=>document.getElementById(id).value.trim();
+
+ const mensaje=[
+  "Hola mas.viral, quiero solicitar una propuesta.",
+  "",
+  "Nombre: "+get("nombre"),
+  "Contacto: "+get("dato"),
+  "Servicio: "+get("servicio"),
+  "Presupuesto: "+(get("presupuesto")||"Sin especificar"),
+  "Negocio: "+(get("empresa")||"Sin especificar"),
+  "",
+  "Mensaje:",
+  get("mensaje")
+ ].join("\n");
+
+ window.open(
+  waBase+"?text="+encodeURIComponent(mensaje),
+  "_blank"
+ );
+});
+
+// ================================================
+// SELECCIÓN AUTOMÁTICA DE PLAN
+// ================================================
+document.querySelectorAll(".plan .btn").forEach((btn,index)=>{
+ btn.addEventListener("click",()=>{
+  const opciones=["Plan Arranque","Plan Crecimiento","Plan Impacto"];
+  // El formulario permite enviar el plan solicitado.
+  const select=document.getElementById("servicio");
+  const option=document.createElement("option");
+  option.value=opciones[index];
+  option.textContent=opciones[index];
+  select.appendChild(option);
+  select.value=opciones[index];
+ });
+});
+</script>
+
+</body>
+</html>
